@@ -1,0 +1,32 @@
+.ItemProyect
+	margin-bottom 2rem
+	width 80%
+	background-color white
+	box-shadow 0 0 7px box-shadow
+	max-width 400px
+	&__containe
+		width 90%
+	&__image
+		overflow hidden
+		img
+			margin 0 auto
+			width 100%
+			transition .3s
+			&:hover
+				transform: scale(1.1)
+	&__text
+		padding 1.5rem
+		text-align center
+		h2
+			font-size 1.5rem
+			color color-text
+			margin-bottom 1rem
+		a
+			font-size 1rem
+			color color-text
+			text-decoration none
+
+@media screen and (min-width 767px)
+	.ItemProyect
+		width 45%
+		max-width 600px

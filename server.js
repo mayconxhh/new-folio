@@ -26,14 +26,14 @@ app.use(morgan('dev'))
 app.use(bodyParser.json()) //for parsing aplication/json
 app.use(bodyParser.urlencoded({extended:true}))
 
-app.use('/static', express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'));
 
 app.use('/', routes)
 app.use('/admin', routesAdmin)
 
-app.get('*', function(req, res){
-	res.render('index')
-})
+// app.get('*', function(req, res){
+// 	res.render('index')
+// })
 
 app.listen(port, function(err){
 	if (err) {
