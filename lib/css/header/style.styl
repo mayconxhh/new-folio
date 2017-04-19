@@ -1,0 +1,80 @@
+.Header
+	Width 100%
+	background-color background-header
+	height 60px
+	position fixed
+	z-index 99
+	box-shadow 0px 3px 5px box-shadow
+	&__container
+		display flex
+		justify-content space-between
+	&__logo
+		&__image
+			margin 2px 5px
+			a
+				text-shadow 1px 3px 5px rgba(0, 130, 95, 0.64)
+				font-family 'Pacifico'
+				line-height 50px
+				font-size 1.8rem
+				text-decoration none
+				color color-logo
+	&__button
+		width 30px
+		margin 15px 10px
+		line-height 0
+		cursor pointer
+		img			
+			width 100%
+	&__NavDesktop
+			display none
+	&__NavMobile
+		display block
+		width 100%
+		height auto
+		transition .2s
+		position absolute
+		z-index 99
+		top 60px
+		left -100%
+		background-color background-header
+		box-shadow 0px 3px 5px box-shadow
+		&__options
+			width 100%
+			.Item
+				width 100%
+				text-align center
+				border-top 1px solid #cecece
+				a
+					display block
+					padding 10px
+					color color-text
+					text-decoration none
+					&:hover
+						color color-nav
+				&:hover
+					background-color background-menu-mobile
+					
+@media screen and (min-width 767px)
+	.Header
+		&__button
+			display none
+		&__NavDesktop
+			display block
+			&__options
+				list-style none
+				.Item
+					display inline-block
+					padding 0 10px
+					a
+						font-size 1.3rem
+						text-decoration none
+						line-height 60px
+						color color-text-light
+						&:hover
+							color color-nav
+							background-color #e1ffed
+						    padding 5px
+						    border-radius 5px
+		&__NavMobile
+			display none
+			
