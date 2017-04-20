@@ -6,6 +6,8 @@ var browserify = require('browserify')
 var watch = require('gulp-watch')
 var source = require('vinyl-source-stream')
 var watchify = require('watchify')
+var uglify = require('gulp-uglify')
+var pump = require('pump')
 
 gulp.task('stylus', () =>{
 	return gulp.src('./lib/css/*.styl')
@@ -55,5 +57,15 @@ gulp.task('watch', function(){
 gulp.task('watching', ()=> {
 	gulp.watch('./lib/css/*.styl', ['stylus'])
 })
+
+gulp.task('compress', function (cb) {
+  pump([
+        gulp.src('public/js/index.js'),
+        uglify(),
+        gulp.dest('public/js')
+    ],
+    cb
+  );
+});
 
 gulp.task('default', ['styles', 'assets', 'build'])
