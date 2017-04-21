@@ -4,7 +4,7 @@ var bodyParser 	= require('body-parser')
 var morgan = require('morgan')
 var mongoose = require('mongoose')
 var port = process.env.PORT || 5000
-var routes = require('./routes')
+// var routes = require('./routes')
 // var routesAdmin = require('./routes/admin')
 var routesBlog = require('./routes/blog')
 // var config = require('./config')
@@ -31,13 +31,14 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/views/blog'));
 
-app.use('/', routes)
+// app.use('/', routes)
 // app.use('/admin', routesAdmin)
 app.use('/blog', routesBlog)
 
-// app.get('*', function(req, res){
-// 	res.render('index')
-// })
+
+app.get('*', function(req, res){
+	res.render('index')
+})
 
 app.listen(port, function(err){
 	if (err) {
